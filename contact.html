@@ -33,8 +33,8 @@
                     </div>
                     <div class="a">
                         <p>mail us</p>
-                        <a href="#">info@alpha.designs.com</a><br>
-                        <a href="#">info@alpha.designs2.com</a>
+                        <a href="#">alpha.designs.aa@gmail.com</a><br>
+                        <a href="#">alialializadeh31@gmail.com</a>
                     </div>
                     
                 </div>
@@ -59,7 +59,7 @@
                     </div>
                     <div>
                         <p>location</p>
-                        <h5>Dubai,<br>United Arab Emirates</h5>
+                        <h5>Mashhad<br>Razavi Khorasan Province, Iran<h5>
                     </div>
 
                 </div>
@@ -68,7 +68,7 @@
                 <div class="social-info">
                     <h5>social info</h5>
                     <div class="icons">
-                        <a href="https://www.linkedin.com/in/alphawerewolf31/" target="_blank" class="linkedin"><img src="icons/logo-linkedin.svg" alt=""></a>
+                    <a href="https://www.linkedin.com/in/alphawerewolf31/" target="_blank" class="linkedin"><img src="icons/logo-linkedin.svg" alt=""></a>
                     <a href="https://stackoverflow.com/users/13569194/alphawerewolf31" target="_blank" class="stack"><img src="icons/logo-stackoverflow.svg" alt=""></a>
                     <a href="https://github.com/alphawerewolf31" target="_blank" class="github"><img src="icons/logo-github.svg" alt=""></a>
                     <a href="https://t.me/alphawerewolf31" target="_blank" class="telegram"><img src="icons/telegram (1).png"></a>
@@ -79,9 +79,18 @@
                                     </div>
             </div>
 
-            <div class="messege">
-                <h1>alpha</h1>
-            </div>
+                <div class="message">
+                    <p>Let's work <span class="blue">togeter</span>.</p>
+                    <img src="icons/star.png" alt="">
+
+                    <input type="text"  id="name" style="width: 100%; height: 12%;" placeholder="Name*">
+                    <input type="email" id="email" style="width: 100%; height: 12%;"  placeholder="Email*">
+                    <input type="text"  id="subject" style="width: 100%; height: 12%;" placeholder="Your Subject*">
+
+                    <textarea placeholder="Your Message" id="message" style="width: 100%; height: 30%;"></textarea>
+                    <button  id="send-btn">Send Message</button>
+                </div>
+            
 
         </div>
 
@@ -135,5 +144,29 @@
 <script src="contact.css"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<script src="https://smtpjs.com/v3/smtp.js">    </script>
+<script>
+    var btn = document.getElementById('send-btn');
+    btn.addEventListener('click', function(e){
+        e.preventDefault();
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var subject = document.getElementById('subject').value;
+        var message = document.getElementById('message').value;
+        var body = 'name: ' + name + '<br/> email: ' + email + '<br/>subject: ' + subject + '<br/>message: ' + message;
+
+
+        Email.send({
+    SecureToken : "cdca6e1c-0e0e-4f55-8e17-7607d16c3187",
+    To : 'alialializadeh71@gmail.com',
+    From : "alialializadeh31@gmail.com",
+    Subject : "contact message",
+    Body : body
+}).then(
+  message => alert(message)
+);
+})
+</script>
 </body>
 </html>
